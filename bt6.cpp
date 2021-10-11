@@ -1,16 +1,15 @@
 //Tinh S=1/1.2+1/2.3+...+1/n(n+1)
-
-#include<iostream>
-using namespace std;
+#include<stdio.h>
 int main(){
     int n;
     float S=0;
-    cout<<"Nhap 1 so nguyen duong n: \n";
-    cin>>n;
+    printf("Nhap 1 so nguyen duong n: \n");
+    scanf("%d",&n);
     for(int i=1;i<=n;i++){
         S+=(1/(float)(i*(i+1)));
     }
-    cout<<"Gia tri tong S la: "<<S;
+    printf("Gia tri tong S la: %f",S);
+
 
    
 
