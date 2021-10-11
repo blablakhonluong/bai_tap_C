@@ -7,6 +7,7 @@ int main(){
     float S=0;
     cout<<"Nhap 1 so nguyen duong n: \n";
     cin>>n;
+    
     for(int i=1;i<=n;i++){
         S+=(1/(float)i);
     }

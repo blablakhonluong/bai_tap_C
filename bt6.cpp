@@ -12,9 +12,9 @@ int main(){
     }
     cout<<"Gia tri tong S la: "<<S;
 
+   
+
 //Cách đi nhanh: cout<<(1-1/(n+1)); :))
-
-
 
 
 }
