@@ -9,5 +9,5 @@ int main(){
         P*=i; //tinh giai thua
         S+=P; //cong don cac giai thua
     }
-    cout<<S;
+    cout<<S; //xuat ket qua
 }
