@@ -1,3 +1,4 @@
+//Chèn phần tử vào vị trí thứ k trong mảng.
 #include<stdio.h>
 int main(){
     int n;
@@ -7,7 +8,7 @@ int main(){
 
     }while(n<=0 && n>100);
 
-    int a[n];
+    int a[100];
 
     printf("Nhap cac phan tu cua mang: \n");
     for (int i = 0; i < n; i++) {
