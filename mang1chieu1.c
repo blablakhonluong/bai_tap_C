@@ -5,11 +5,18 @@ Thống kê số nguyên tố có trong mảng;
 Sắp xếp mảng theo thứ tự tăng dần của các phần tử;
 Xoá phần tử ở vị trí thứ k trong mảng */
 
-
 #include<stdio.h>
-#include<math.h>
+#include <stdlib.h> // thư viện này chứa hàm rand() để random số.
+#include<time.h>
+
+
+int random(int a, int b){
+    return a + rand() % (b+1-a); //lấy ramdom rồi lấy phần chia dư của số rand() trong đoạn a,b
+}
+
 
 int main(){
+    srand((int)time(0)); //câu giờ để mỗi lần chọn số nó sẽ ra khác nhau
     int n;
     do{
     printf("Nhap so phan tu cua mang la 1 so nguyen duong: ");
@@ -19,10 +26,15 @@ int main(){
 
     int a[100];
 
-    printf("Nhap cac phan tu cua mang: \n");
+    printf("Nhap cac phan tu cua mang la cac so ngau nhien\n");
     for (int i = 0; i < n; i++) {
-        printf("a[%d] = ", i);
-        scanf("%d", &a[i]);
+       a[i]=random(-50,50);
+    }
+
+    //in mang 
+
+    for (int i = 0; i < n; i++){
+        printf("Phan tu a[%d] la: %d\n",i, a[i]);
     }
     //Tim min,max
     int min=a[0],max=a[0];
@@ -64,7 +76,6 @@ int main(){
 
     for (int i = 0; i < n; i++) {
         int count_uoc=0;
-        if(a[i]>1){
             for(int j = 1; j <=a[i]; j++){
                 if(a[i]%j==0){
                     count_uoc++;
@@ -72,12 +83,9 @@ int main(){
             }
             if(count_uoc==2){
                 count_snt++;
-                count_uoc==0;
+                
             }
-        }
-
-
-
+        
     }
     printf("So cac so nguyen to trong mang la: %d\n",count_snt);
 
@@ -96,7 +104,7 @@ int main(){
     }
     printf("Mang sau khi sap xep la: \n");
     for(int i = 0; i < n; i++){
-        printf("%3d",a[i]);
+        printf("%2d\n",a[i]);
     }
 
     //xoa phan tu o vi tri k
@@ -112,7 +120,7 @@ int main(){
     n--;
     printf("Mang sau khi xoa phan tu o vi tri k\n");
     for(int i = 0; i < n; i++){
-        printf("%3d",a[i]);
+        printf("%d\n",a[i]);
     }
 
 

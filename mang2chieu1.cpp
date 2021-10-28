@@ -1,4 +1,6 @@
 #include<stdio.h>
+#include <stdlib.h> // thư viện này chứa hàm rand() để random số.
+#include<time.h>
 
 int checkSohoanhao(int check){
     int S=0;
@@ -19,7 +21,7 @@ int checkSohoanhao(int check){
 int main()
 { 
     // khai báo mảng
-    
+    srand((int)time(0)); //câu giờ để mỗi lần chọn số nó sẽ ra khác nhau
     int m,n;
     int a[50][50];
     printf("nhap so hang m = "); scanf("%d",&m);
@@ -29,8 +31,8 @@ int main()
     {
         for(int j=0;j<n;j++)
         {
-            printf("Nhap gia tri cho phan tu a[%d][%d]: ",i,j);
-            scanf("%d",&a[i][j]);
+            
+            a[i][j]=rand();
         }
     }
     //in mảng
@@ -39,7 +41,7 @@ int main()
     {
         for(int j=0;j<n;j++)
         {
-            printf("%2d ",a[i][j]);
+            printf("%3d ",a[i][j]);
         }
         printf("\n"); // hết 1 vòng j thì nhảy 1 i lên nên là xuống dòng
     }
